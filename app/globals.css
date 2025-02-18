@@ -1,0 +1,173 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* @font-face {
+  font-family: "Pretendard";
+  font-weight: 800;
+  src: url("../public/fonts/Pretendard-ExtraBold.woff2") format("woff2");
+  font-display: swap;
+}
+@font-face {
+  font-family: "Pretendard";
+  font-weight: 700;
+  src: url("../public/fonts/Pretendard-Bold.woff2") format("woff2");
+  font-display: swap;
+}
+@font-face {
+  font-family: "Pretendard";
+  font-weight: 600;
+  src: url("../public/fonts/Pretendard-SemiBold.woff2") format("woff2");
+  font-display: swap;
+}
+@font-face {
+  font-family: "Pretendard";
+  font-weight: 500;
+  src: url("../public/fonts/Pretendard-Medium.woff2") format("woff2");
+  font-display: swap;
+}
+@font-face {
+  font-family: "Pretendard";
+  font-weight: 400;
+  src: url("../public/fonts/Pretendard-Regular.woff2") format("woff2");
+  font-display: swap;
+} */
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  font-family: "Pretendard";
+  overflow-x: hidden;
+  /* background: #222; */
+  scrollbar-gutter: stable both-edges;
+}
+
+#scrollbar {
+  overflow: auto;
+  height: 100dvh;
+  scrollbar-color: #c5c8ce transparent;
+}
+
+::-webkit-scrollbar-track {
+  background-color: transparent !important;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+  background-color: transparent !important;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #c5c8ce;
+  border: 2px solid #c5c8ce;
+  border-radius: 4px;
+}
+
+#alert {
+  opacity: 0;
+  pointer-events: none;
+  transition: 1s;
+  -webkit-transition: 1s;
+}
+
+#alert.show {
+  opacity: 1;
+  pointer-events: all;
+  transition: 1s;
+  -webkit-transition: 1s;
+}
+
+#modal {
+  display: none;
+}
+
+#modal.show {
+  display: flex;
+}
+
+#modalTerm {
+  opacity: 0;
+  pointer-events: none;
+  transition: 0.5s;
+  -webkit-transition: 0.5s;
+}
+
+#modalTerm.show {
+  opacity: 1;
+  pointer-events: all;
+  transition: 0.5s;
+  -webkit-transition: 0.5s;
+}
+
+.animation1 {
+  background-color: #76a6ff;
+  height: 96px;
+  transition: height 5s;
+  transition-timing-function: linear;
+}
+
+.animationHeader1 {
+  animation: frame 500ms linear;
+  animation-delay: 0.4s;
+  transition-duration: 0.6s;
+  transition-property: opacity, transform, -webkit-transform;
+}
+
+.animationHeader2 {
+  animation: frame 500ms linear;
+  animation-delay: 0.5s;
+  transition-duration: 0.6s;
+  transition-property: opacity, transform, -webkit-transform;
+}
+
+.animationHeader3 {
+  animation: frame 500ms linear;
+  animation-delay: 0.6s;
+  transition-duration: 0.6s;
+  transition-property: opacity, transform, -webkit-transform;
+}
+
+@keyframes frame {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 100px, 0);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+#business .business-chat1,
+#business .business-chat2,
+#business .business-chat3 {
+  opacity: 0;
+}
+
+#business.show .business-chat1 {
+  opacity: 1;
+  transition: opacity 1s linear;
+  transition-delay: 0.5s;
+}
+
+#business.show .business-chat2 {
+  opacity: 1;
+  transition: opacity 1s linear;
+  transition-delay: 1s;
+}
+
+#business.show .business-chat3 {
+  opacity: 1;
+  transition: opacity 1s linear;
+  transition-delay: 1.5s;
+}
