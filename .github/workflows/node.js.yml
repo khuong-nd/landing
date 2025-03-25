@@ -40,7 +40,8 @@ jobs:
         uses: JamesIves/github-pages-deploy-action@v4
         with:
           branch: main  # The branch to deploy to
-          folder: ./app  # The folder to deploy (replace with your build folder if it's different)
+          run: pwd
+          folder: app  # The folder to deploy (replace with your build folder if it's different)
           token: ${{ secrets.GITHUB_TOKEN }}  # Use the default GitHub token for authentication
 
 #     name: Node.js CI
