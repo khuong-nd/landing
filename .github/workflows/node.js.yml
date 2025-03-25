@@ -40,53 +40,5 @@ jobs:
         uses: JamesIves/github-pages-deploy-action@v4
         with:
           branch: main  # The branch to deploy to
-          run: pwd
-          folder: app  # The folder to deploy (replace with your build folder if it's different)
+          folder: out  # The folder to deploy (replace with your build folder if it's different)
           token: ${{ secrets.GITHUB_TOKEN }}  # Use the default GitHub token for authentication
-
-#     name: Node.js CI
-
-# on:
-#   push:
-#     branches:
-#       - main
-#       - 'release/*'
-#   pull_request:
-#     branches:
-#       - main
-#   # Optionally, run on schedule
-#   # schedule:
-#   #   - cron: '0 0 * * *'
-
-# jobs:
-#   build:
-#     runs-on: ubuntu-latest
-
-#     strategy:
-#       matrix:
-#         node-version: [14.x, 16.x, 18.x] # Define Node.js versions you want to test
-
-#     steps:
-#     - name: Checkout repository
-#       uses: actions/checkout@v2
-
-#     - name: Set up Node.js
-#       uses: actions/setup-node@v3
-#       with:
-#         node-version: ${{ matrix.node-version }}
-#         cache: 'npm'
-
-#     - name: Install dependencies
-#       run: npm install
-
-#     - name: Run tests
-#       run: npm test
-
-#     - name: Build project (optional)
-#       run: npm run build
-
-#     # Optional: deploy to your server or cloud service, e.g., Vercel, Netlify, AWS, etc.
-#     # - name: Deploy to production
-#     #   run: npm run deploy
-#     #   env:
-#     #     NODE_ENV: production
